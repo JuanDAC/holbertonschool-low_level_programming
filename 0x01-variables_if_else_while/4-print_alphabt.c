@@ -12,9 +12,10 @@ int main(void)
 	for (lowerCase = 'a'; lowerCase < 'z'; lowerCase++)
 	{
 		if (!(lowerCase == 'q' || lowerCase == 'e'))
+		{
 			putchar(lowerCase);
+		}
 	}
 	putchar('\n');
 	return (0);
 }
-
