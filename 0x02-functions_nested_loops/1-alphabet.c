@@ -3,12 +3,11 @@
 /**
 * print_alphabet - print the alphabet on screen
 *
-* Return: Always void
+* Return: Always 0
 */
 void print_alphabet(void)
 {
 	char character;
-	int valueCharacter;
 
 	for (character = 'a'; character <= 'z'; character++)
 		_putchar(character);
