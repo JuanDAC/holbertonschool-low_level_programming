@@ -3,20 +3,18 @@
 /**
 * print_alphabet - print the alphabet on screen
 *
-* Return: Always void
+* Return: void
 */
 void print_alphabet_x10(void)
 {
-	short loop = 0;
+	short loop;
 	char character = ('a' - 1);
 
-	while ((++loop) <= 10)
+	for (loop = 0; (++loop) <= 10;)
 	{
-		character = 'a';
-		while (character <= 'z')
+		for (character = 'a'; character <= 'z'; character++)
 		{
 			_putchar(character);
-			character++;
 		}
 		_putchar('\n');
 	}
