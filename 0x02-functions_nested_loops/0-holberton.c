@@ -11,7 +11,7 @@ int main(void)
 
 	int index;
 
-	for (index = 0; index < 10; index++)
+	for (index = 0; index <= 9; index++)
 		_putchar(word[index]);
 
 	return (0);
