@@ -7,12 +7,12 @@
 */
 int main(void)
 {
-	char word[10] = "Holberton\n";
+	char word[] = "Holberton\n";
 
-	int index = 0;
+	int index;
 
-	while (word[index])
-		_putchar(word[index++]);
+	for (index = 0; index < 10; index++)
+		_putchar(word[index]);
 
 	return (0);
 }
