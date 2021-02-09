@@ -14,8 +14,5 @@ int main(void)
 	while (word[index])
 		_putchar(word[index++]);
 
-	/* for (index = 0; index <= 10; index++) */
-		/* _putchar(word[index]); */
-
 	return (0);
 }
