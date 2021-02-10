@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 #define COMMA ','
 #define SPACE ' '
 #define ASCIIZERO '0'
