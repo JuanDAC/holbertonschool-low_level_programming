@@ -9,9 +9,7 @@
  */
 void print_times_table(int n)
 {
-	short x;
-	short y;
-
+	short x, y, product;
 
 	if (n > 15 || n < 0)
 		return;
@@ -21,22 +19,30 @@ void print_times_table(int n)
 		_putchar('0');
 		for (y = 1; y <= n; y++)
 		{
-
-			if ((x * y) <= n)
+			product = (x * y);
+			if (product <= 9)
 			{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(' ');
-				_putchar((x * y) + '0');
+				_putchar(product + '0');
+			}
+			else if (product <= 99)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar((product / 10) + '0');
+				_putchar((product % 10) + '0');
 			}
 			else
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
-				_putchar(((x * y) / 10) + '0');
-				_putchar(((x * y) % 10) + '0');
+				_putchar((product / 100) + '0');
+				_putchar(((product / 10) % 10) + '0');
+				_putchar((product % 10) + '0');
 			}
 		}
 		_putchar('\n');
