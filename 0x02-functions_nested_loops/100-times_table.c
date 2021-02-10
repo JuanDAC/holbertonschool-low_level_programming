@@ -1,5 +1,9 @@
 #include "holberton.h"
 
+#define COMMA ','
+#define SPACE ' '
+#define ASCIIZERO '0'
+
 /**
  * print_times_table - function that prints the n times table, starting with 0.
  *
@@ -16,33 +20,33 @@ void print_times_table(int n)
 
 	for (x = 0; x <= n; x++)
 	{
-		_putchar('0');
+		_putchar(ASCIIZERO);
 		for (y = 1; y <= n; y++)
 		{
 			product = (x * y);
 			if (product <= 9)
 			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(product + '0');
+				_putchar(COMMA);
+				_putchar(SPACE);
+				_putchar(SPACE);
+				_putchar(SPACE);
+				_putchar(product + ASCIIZERO);
 			}
 			else if (product <= 99)
 			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar((product / 10) + '0');
-				_putchar((product % 10) + '0');
+				_putchar(COMMA);
+				_putchar(SPACE);
+				_putchar(SPACE);
+				_putchar((product / 10) + ASCIIZERO);
+				_putchar((product % 10) + ASCIIZERO);
 			}
 			else
 			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar((product / 100) + '0');
-				_putchar(((product / 10) % 10) + '0');
-				_putchar((product % 10) + '0');
+				_putchar(COMMA);
+				_putchar(SPACE);
+				_putchar((product / 100) + ASCIIZERO);
+				_putchar(((product / 10) % 10) + ASCIIZERO);
+				_putchar((product % 10) + ASCIIZERO);
 			}
 		}
 		_putchar('\n');
