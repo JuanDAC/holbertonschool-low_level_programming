@@ -6,15 +6,17 @@
 */
 void more_numbers(void)
 {
-	short number = -1;
+	short number, iter;
 
-	while ((number++) < 14)
+	for (iter = 0; iter < 10; iter++)
 	{
-		if (number >= 10)
-			_putchar((number / 10) + '0');
-		_putchar((number % 10) + '0');
+		for (number = 0; number < 14; number++)
+		{
+			if (number >= 10)
+				_putchar((number / 10) + '0');
+			_putchar((number % 10) + '0');
+		}
+		_putchar('\n');
 	}
-	_putchar('\n');
-
 }
 
