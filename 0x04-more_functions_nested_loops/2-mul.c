@@ -1,13 +1,15 @@
-#include holberton.h
-#include <stdio.h>
+#include "holberton.h"
 /**
-* main - Entry point
+* _isdigit - function that checks for a digit (0 through 9).
 *
-* Return: Always 0 (Success)
+* @a: int
+*
+* @b: int
+*
+* Return: 1 (is uppercase) else 1
 */
-int main(void)
+int mul(int a, int b)
 {
-	
-	return (0);
+	return (a * b);
 }
 
