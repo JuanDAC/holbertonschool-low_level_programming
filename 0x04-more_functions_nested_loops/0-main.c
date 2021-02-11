@@ -1,7 +1,7 @@
-nclude "holberton.h"
+#include "holberton.h"
 #include <stdio.h>
-#declare SPACE 32
-#declare SPACEWITHSEPARATION 255
+#define SPACE ' '
+#define SPACEWITHSEPARATION '|'
 
 /**
 * main - check the code for Holberton School students.
@@ -12,7 +12,7 @@ int main(void)
 {
 	char c;
 
-	for (c = SPACE; c <= SPACEWITHSEPARATION; c++)
+	for (c = (char) SPACE; c <= (char) SPACEWITHSEPARATION; c++)
 		printf("%c: %d\n", c, _isupper(c));
 
 	return (0);

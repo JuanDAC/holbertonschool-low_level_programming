@@ -1,13 +1,13 @@
-#include holberton.h
-#include <stdio.h>
+#include "holberton.h"
 /**
-* main - Entry point
+* _isdigit - function that checks for a digit (0 through 9).
 *
-* Return: Always 0 (Success)
+* @c: int char
+*
+* Return: 1 (is uppercase) else 1
 */
-int main(void)
+int _isdigit(int c)
 {
-	
-	return (0);
+	return ((c >= '0' && c <= '9') ? 1 : 0);
 }
 
