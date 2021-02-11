@@ -1,13 +1,20 @@
-#include holberton.h
-#include <stdio.h>
+#include "holberton.h"
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
+* more_numbers - function that prints 10 times the numbers,
+*                from 0 to 14, followed by a new line.
+* Return: void
 */
-int main(void)
+void more_numbers(void)
 {
-	
-	return (0);
+	short number = -1;
+
+	while ((number++) < 14)
+	{
+		if (number >= 10)
+			_putchar((number / 10) + '0');
+		_putchar((number % 10) + '0');
+	}
+	_putchar('\n');
+
 }
 
