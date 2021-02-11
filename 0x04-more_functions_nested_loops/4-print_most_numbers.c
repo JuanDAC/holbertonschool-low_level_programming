@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
-* print_numbers - function that prints the numbers, from 0 to 9,
+* print_most_numbers - function that prints the numbers, from 0 to 9,
 *                 followed by a new line.
 * Return: 1 (is uppercase) else 1
 */
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	char number = '/';
 
