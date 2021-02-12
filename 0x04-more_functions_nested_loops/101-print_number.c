@@ -22,7 +22,7 @@ void print_number(int n)
 			_putchar('-');
 			n = (-n);
 		}
-		for (; n > 0; n /= 1000)
+		for (; n > 0; n /= 100)
 			length *= 10;
 		for (n = length; n > 0; n /= 10)
 		{
