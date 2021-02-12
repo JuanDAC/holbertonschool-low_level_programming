@@ -10,6 +10,9 @@ void print_number(int n)
 	int length = 10;
 	int number = n;
 
+	if (n < 0)
+		number = (-n);
+
 	if (n == 0)
 		_putchar('0');
 	else
