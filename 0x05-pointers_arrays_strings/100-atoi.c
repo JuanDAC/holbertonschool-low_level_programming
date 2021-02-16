@@ -17,10 +17,10 @@ int leng(char *s)
 */
 int _atoi(char *s)
 {
-	unsigned int exp = 1;
-	short sign = 1;
-	unsigned int iter;
-	unsigned int pos;
+	int exp = 1;
+	int sign = 1;
+	int iter;
+	int pos;
 	unsigned int exit = 0;
 	int length = leng(s);
 
