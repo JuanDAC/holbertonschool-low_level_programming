@@ -1,13 +1,22 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
 /**
-* main - Entry point
-*
+* _strcpy - Entry point
+* @dest: pointer type char
+* @src: pointer type char
 * Return: Always 0 (Success)
 */
-int main(void)
+char *_strcpy(char *dest, char *src)
 {
-	
-	return (0);
+	char *first = dest;
+
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = *src;
+	return (first);
 }
 
