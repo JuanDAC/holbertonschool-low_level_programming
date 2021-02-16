@@ -21,8 +21,8 @@ int _atoi(char *s)
 	int sign = 1;
 	int iter;
 	int pos;
-	unsigned int exit = 0;
-	int length = leng(s);
+	int exit = 0;
+	const int length = leng(s);
 
 	for (pos = length; pos >= 0; pos--)
 	{
@@ -39,7 +39,7 @@ int _atoi(char *s)
 					((pos + 1) <= length)
 					&& !(
 						*(s + (pos + 1)) >= '0'
-						&& *(s + (pos + 1)) < '9'
+						&& *(s + (pos + 1)) <= '9'
 					)
 				)
 				{
