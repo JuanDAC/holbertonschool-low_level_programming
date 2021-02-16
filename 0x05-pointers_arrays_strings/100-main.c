@@ -9,23 +9,38 @@
 int main(void)
 {
 	int n;
+	char *str;
 
-	n = _atoi("98");
+	str = "98";
+	n = _atoi(str);
 	printf("%d\n", n);
-	n = _atoi("-402");
+	str = "-402";
+	n = _atoi(str);
 	printf("%d\n", n);
-	n = _atoi("          ------++++++-----+++++--98");
+	str = "          ------++++++-----+++++--98";
+	n = _atoi(str);
 	printf("%d\n", n);
-	n = _atoi("214748364");
+	str = "214748364";
+	n = _atoi(str);
 	printf("%d\n", n);
-	n = _atoi("0");
+	str = "-0";
+	n = _atoi(str);
 	printf("%d\n", n);
-	n = _atoi("Suite 402");
+	str = "Suite 402";
+	n = _atoi(str);
 	printf("%d\n", n);
-	n = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
+	str = "         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA";
+	n = _atoi(str);
 	printf("%d\n", n);
-	n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
+	str = "---++++ -++ Sui - te -   402 #cisfun :)";
+	n = _atoi(str);
 	printf("%d\n", n);
+	str = "-0";
+	n = _atoi(str);
+	printf("%d|\n", n);
 	
+
+
+
 	return (0);
 }

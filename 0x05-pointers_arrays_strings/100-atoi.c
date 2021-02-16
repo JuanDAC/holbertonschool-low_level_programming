@@ -28,18 +28,15 @@ int _atoi(char *s)
 	{
 		if (*(s + pos) == '-' && exp > 1)
 			sign *= -1;
-		else if (*(s + pos) == '+' && exp > 1)
-			sign *= 1;
 		for (iter = 0; iter <= 9; iter++)
 		{
 			if (*(s + pos) == ('0' + iter))
 			{
-
 				if (
 					((pos + 1) <= length)
 					&& !(
-						*(s + (pos + 1)) >= '0'
-						&& *(s + (pos + 1)) <= '9'
+						(*(s + (pos + 1)) >= '0')
+						&& (*(s + (pos + 1)) <= '9')
 					)
 				)
 				{
@@ -52,6 +49,6 @@ int _atoi(char *s)
 		}
 	}
 
-	return (exit * sign);
+	return ((exit * sign) + 0);
 }
 
