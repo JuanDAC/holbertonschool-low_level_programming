@@ -21,7 +21,7 @@ int _atoi(char *s)
 	int sign = 1;
 	int iter;
 	int pos;
-	int exit = 0;
+	unsigned int exit = 0;
 	int length = leng(s);
 
 	for (pos = length; pos >= 0; pos--)
