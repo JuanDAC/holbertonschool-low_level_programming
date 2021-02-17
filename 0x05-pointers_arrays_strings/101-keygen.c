@@ -11,6 +11,7 @@ int main(void)
 	int number = 0, random = 0;
 	char *key = resoul;
 
+	srand(time(NULL));
 	while (number < 2645)
 	{
 		random = rand() % 122;
