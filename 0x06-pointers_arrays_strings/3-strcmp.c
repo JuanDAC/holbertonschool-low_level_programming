@@ -1,13 +1,13 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
 /**
-* main - Entry point
-* @ :
+* _strcmp - Entry point
+* @s1: pointer type char
+* @s2: pointer type char
 * Return: Always 0 (Success)
 */
-int main(void)
+int _strcmp(char *s1, char *s2)
 {
-	
-	return (0);
+	return (((int) *s1) - ((int) *s2));
 }
 
