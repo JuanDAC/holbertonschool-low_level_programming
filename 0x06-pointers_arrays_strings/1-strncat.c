@@ -11,7 +11,7 @@ int length(char *dest)
 	return ((*dest != '\0') ? 1 + length(dest + 1) : 0);
 }
 /**
-* _strcat - ry point
+* _strncat - ry point
 * @dest: - pointer
 * @src: - pointer
 * @n: - pointer
