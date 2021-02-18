@@ -23,8 +23,7 @@ char *_strncat(char *dest, char *src, int n)
 	const unsigned int log = length(dest);
 
 	for (i = 0; i < n; i++)
-		*(dest + i + log) = *(src + i);
-
+		*(dest + log + i) = *(src + i);
 	return (dest);
 }
 
