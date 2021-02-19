@@ -7,7 +7,7 @@
 */
 void toUpper(char *string)
 {
-	if (*string > 'a' && *string < 'z')
+	if (*string >= 'a' && *string <= 'z')
 		*string -= 32;
 }
 /**
@@ -18,7 +18,7 @@ void toUpper(char *string)
 */
 void toLower(char *string)
 {
-	if (*string > 'A' && *string < 'Z')
+	if (*string >= 'A' && *string <= 'Z')
 		*string += 32;
 }
 /**

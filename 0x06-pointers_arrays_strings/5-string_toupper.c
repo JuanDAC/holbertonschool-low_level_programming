@@ -7,10 +7,10 @@
 */
 char *string_toupper(char *string)
 {
-	char *head;
+	char *head = string;
 
-	for (head = string; *string != '\0'; string++)
-		if (*string > 'a' && *string < 'z')
+	for (; *string != '\0'; string++)
+		if (*string >= 'a' && *string <= 'z')
 			*string -= 32;
 	return (head);
 }
