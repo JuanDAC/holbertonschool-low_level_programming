@@ -1,13 +1,17 @@
-#include holberton.h
-#include <stdio.h>
+#include "holberton.h"
 /**
-* main - Entry point
-* @ :
+* string_toupper - prints a string, in reverse,
+*             followed by a new line
+* @string: pointer type char
 * Return: Always 0 (Success)
 */
-int main(void)
+char *string_toupper(char *string)
 {
-	
-	return (0);
+	char *head;
+
+	for (head = string; *string != '\0'; string++)
+		if (*string > 'a' && *string < 'z')
+			*string -= 32;
+	return (head);
 }
 
