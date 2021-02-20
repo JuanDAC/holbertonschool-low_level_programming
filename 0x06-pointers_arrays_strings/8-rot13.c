@@ -14,7 +14,10 @@ char *rot13(char *string)
 	for (i = 0; *(string + i) != '\0'; i++)
 		for (j = 0; *(alphabet + j) != '\0'; j++)
 			if (*(alphabet + j) == *(string + i))
+			{
 				*(string + i) = *(ROT13 + j);
+				break;
+			}
 
 	return (string);
 }
