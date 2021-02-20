@@ -11,17 +11,6 @@ void toUpper(char *string)
 		*string -= 32;
 }
 /**
-* toLower - prints a string, in reverse,
-*             followed by a new line
-* @string: pointer type char
-* Return: Always 0 (Success)
-*/
-void toLower(char *string)
-{
-	if (*string >= 'A' && *string <= 'Z')
-		*string += 32;
-}
-/**
 * include - prints a string, in reverse,
 *             followed by a new line
 * @string: pointer type char
@@ -53,8 +42,6 @@ char *cap_string(char *string)
 			toUpper(string);
 		else if (include(string - 1))
 			toUpper(string);
-		else
-			toLower(string);
 		string++;
 	}
 	return (head);
