@@ -1,7 +1,10 @@
 #include "holberton.h"
 #include <stdio.h>
-#define REPLACE_UPPER "OL§EA§§T"
-#define REPLACE_LOWER "ol§ea§§t"
+/**
+* hash - Entry point
+* @character: string
+* Return: Always 0 (Success)
+*/
 int hash(char *character)
 {
 
@@ -29,12 +32,12 @@ int hash(char *character)
 		)
 	);
 }
+
 /**
 * leet - Entry point
 * @string: string
 * Return: Always 0 (Success)
 */
-
 char *leet(char *string)
 {
 	int i;
