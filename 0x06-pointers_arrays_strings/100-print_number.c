@@ -1,54 +1,37 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
-* leng - function that convert a string to an integer.
-* @s: string
+* get_scale - function that convert a string to an integer.
+* @n: int
 * Return: int
 */
-int leng(char *s)
+int get_scale(int n)
 {
-	return (*s != '\0' ? 1 + leng(s + 1) : 0);
-}
+	if (n > 10)
+		return (10 * get_scale(n / 10));
+	else
+		return (1);
 
+}
 /**
-* _atoi - function that convert a string to an integer.
-* @s: string
-* Return: int
+* print_number - function that convert a string to an integer.
+* @n: string
+* Return: void
 */
 void print_number(int n)
 {
-	int exp = 1;
-	int sign = 1;
-	int iter;
-	int pos;
-	unsigned int exit = 0;
-	const int length = leng(s);
+	int scale;
 
-	for (pos = length; pos >= 0; pos--)
+	if (n < 0)
 	{
-		if (*(s + pos) == '-' && exp > 1)
-			sign *= -1;
-		for (iter = 0; iter <= 9; iter++)
-		{
-			if (*(s + pos) == ('0' + iter))
-			{
-				if (
-					((pos + 1) <= length)
-					&& !(
-						(*(s + (pos + 1)) >= '0')
-						&& (*(s + (pos + 1)) <= '9')
-					)
-				)
-				{
-					exp = 1;
-					exit = 0;
-				}
-				exit += (iter * exp);
-				exp *= 10;
-			}
-		}
+		n *= -1;
+		_putchar('-');
 	}
 
-	return ((exit * sign) + 0);
+	for (scale = get_scale(n); scale >= 10; scale /= 10, n %= scale)
+		_putchar('0' + (n / scale));
+	_putchar('0' + (n / scale));
+
+	printf("\n%d\n", scale);
 }
 
