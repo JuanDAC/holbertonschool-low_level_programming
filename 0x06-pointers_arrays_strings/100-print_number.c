@@ -20,7 +20,7 @@ int get_scale(int n)
 */
 void print_number(int n)
 {
-	int scale;
+	int scale, unit;
 
 	if (n < 0)
 	{
@@ -28,10 +28,17 @@ void print_number(int n)
 		_putchar('-');
 	}
 
-	for (scale = get_scale(n); scale >= 10; scale /= 10, n %= scale)
-		_putchar('0' + (n / scale));
+	for (scale = get_scale(n); scale >= 10; scale /= 10)
+	{
+		unit = (n / scale);
+		if (unit > 9)
+		{
+			_putchar('0' + (unit / 10));
+			unit = unit % 10;
+		}
+		_putchar('0' + unit);
+		n = n % scale;
+	}
 	_putchar('0' + (n / scale));
-
-	printf("\n%d\n", scale);
 }
 
