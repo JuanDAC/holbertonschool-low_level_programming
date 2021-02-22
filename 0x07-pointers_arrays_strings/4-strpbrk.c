@@ -1,29 +1,31 @@
 #include "holberton.h"
 #include <stdio.h>
-int include(char c, char *s)
+/**
+* includes - Entry point
+* @c: char
+* @s: char
+* Return: Always 0 (Success)
+*/
+int includes(char *s, char c)
 {
 	if (*s == '\0')
 		return (0);
 	else
-		return ((*s == c) || include(c, s + 1));
+		return ((*s == c) || includes(s + 1, c));
 }
 /**
-* _strspn - Entry point
+* _strpbrk - Entry point
 * @s: char
-* @c: char
+* @accept: char
 * Return: Always 0 (Success)
 */
-unsigned int _strspn(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-	int i;
-	unsigned int acumulator = 0;
+	unsigned int i;
 
 	for (i = 0; *(s + i) != '\0'; i++)
-		if (include(*(s + i), accept))
-			acumulator += 1;
-		else
-			break;
+		if (includes(accept, *(s + i)))
+			return (s + i);
 
-	return (acumulator);
+	return (NULL);
 }
-
