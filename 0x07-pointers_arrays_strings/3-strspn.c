@@ -16,7 +16,7 @@ int includes(char *s, char c)
 /**
 * _strspn - Entry point
 * @s: char
-* @c: char
+* @accept: char
 * Return: Always 0 (Success)
 */
 unsigned int _strspn(char *s, char *accept)
