@@ -1,17 +1,17 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
-* include - Entry point
+* includes - Entry point
 * @c: char
 * @s: char
 * Return: Always 0 (Success)
 */
-int include(char c, char *s)
+int includes(char *s, char c)
 {
 	if (*s == '\0')
 		return (0);
 	else
-		return ((*s == c) || include(c, s + 1));
+		return ((*s == c) || includes(s + 1, c));
 }
 /**
 * _strspn - Entry point
@@ -21,11 +21,10 @@ int include(char c, char *s)
 */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i;
-	unsigned int acumulator = 0;
+	unsigned int i, acumulator = 0;
 
 	for (i = 0; *(s + i) != '\0'; i++)
-		if (include(*(s + i), accept))
+		if (includes(accept, *(s + i)))
 			acumulator += 1;
 		else
 			break;
