@@ -1,13 +1,21 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
 /**
-* main - Entry point
-* @ :
+* print_chessboard - Entry point
+* @a: char
 * Return: Always 0 (Success)
 */
-int main(void)
+void print_chessboard(char (*a)[8])
 {
-	
-	return (0);
+	unsigned int i, j;
+	const unsigned int TOP = 8;
+
+
+	for (i = 0; i < TOP; i++)
+	{
+		for (j = 0; j < TOP; j++)
+			_putchar(*(*(a + i) + j));
+		_putchar('\n');
+	}
 }
 
