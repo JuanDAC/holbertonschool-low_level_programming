@@ -8,20 +8,13 @@
 */
 void print_diagsums(int *a, int size)
 {
-	int iter, i = 0, j = 0, diagonal1 = 0, diagonal2 = 0;
+	int iter, i = 0, diagonal1 = 0, diagonal2 = 0;
 
-	for (iter = 0; iter < size * size; iter++)
+	for (iter = 0; iter < size; iter++)
 	{
 		i = (iter % size);
-
-		if (j == i)
-		{
-			diagonal1 += *(a + i + (j * size));
-			diagonal2 += *(a + i + ((size - 1 - j) * size));
-		}
-
-		if ((iter + 1) % size == 0)
-			j += 1;
+		diagonal1 += *(a + i + (i * size));
+		diagonal2 += *(a + i + ((size - 1 - i) * size));
 	}
 	printf("%d, %d\n", diagonal1, diagonal2);
 }
