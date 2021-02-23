@@ -1,13 +1,12 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
 /**
-* main - Entry point
-* @ :
+* set_string - print diagsumsint
+* @s: char
+* @to: char
 * Return: Always 0 (Success)
 */
-int main(void)
+void set_string(char **s, char *to)
 {
-	
-	return (0);
+	*s = to;
 }
-
