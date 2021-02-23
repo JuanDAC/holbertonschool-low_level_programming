@@ -11,7 +11,7 @@ int include(char *str1, char *str2)
 	if (*str1 == '\0' || *str2 == '\0')
 		return (1);
 	else
-		return ((*str1 == str2) && include(str1 + 1, str + 1));
+		return ((*str1 == *str2) && include(str1 + 1, str2 + 1));
 }
 /**
 * _strstr - Entry point
