@@ -1,0 +1,10 @@
+void show_both_prints(
+	**texts,
+	void (print_type_one*)(char *s),
+	void (print_type_two*)(char *s)
+);
+
+
+
+
+
