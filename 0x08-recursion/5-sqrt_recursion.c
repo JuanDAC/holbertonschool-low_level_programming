@@ -24,7 +24,7 @@ int _sqrt_recursion(int n)
 	if (n == 0)
 		return (1);
 	r = _sqrt((double) n, (double) 1);
-	if ((double)(r - (int)r) > 0.1)
+	if ((double)(r - (int)r) > .001)
 		return (-1);
 
 	return ((int)(r));
