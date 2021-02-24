@@ -1,5 +1,11 @@
 #include "holberton.h"
 #include <stdio.h>
+/**
+* _sqrt -  point
+* @x: double
+* @y: double
+* Return: Always 0 (Success)
+*/
 double _sqrt(double x, double y)
 {
 	double div = (x / y) - y;
