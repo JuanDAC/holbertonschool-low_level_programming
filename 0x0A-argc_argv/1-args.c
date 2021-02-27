@@ -1,13 +1,12 @@
-#include holberton.h
 #include <stdio.h>
 /**
 * main - Entry point
 * @ :
 * Return: Always 0 (Success)
 */
-int main(void)
+int main(int argc, char *argv[])
 {
-	
-	return (0);
+	printf("%d\n", argc - 1);
+	return (0 && argv);
 }
 

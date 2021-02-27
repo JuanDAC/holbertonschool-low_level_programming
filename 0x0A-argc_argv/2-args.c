@@ -2,11 +2,15 @@
 /**
 * main - Entry point
 * @argc: int
+* @argv: char
 * Return: Always 0 (Success)
 */
-int main(int argc)
+int main(int argc, char *argv[])
 {
-	print("%d\n", argc - 1);
-	return (0);
+	int i;
+
+	for (i = 0; i < argc; i++)
+		printf("%s\n", *(argv + i));
+	return (0 && argv);
 }
 
