@@ -32,7 +32,11 @@ int paserInt(char *string)
 
 	number_raw = ((int)*string) - 48;
 	processed_number = number_raw * _pow(10, length(string)) / 10;
-	return (processed_number + paserInt(string + 1));
+	return (
+		(*string == '-')
+		? -1 * paserInt(string + 1)
+		: processed_number + paserInt(string + 1)
+	);
 }
 /**
 * main - Entry point
