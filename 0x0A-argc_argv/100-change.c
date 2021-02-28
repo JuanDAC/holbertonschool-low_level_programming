@@ -26,7 +26,10 @@ int is_number(char *string)
 {
 	if (*string == '\0')
 		return (1);
-	return ((*string >= '0' && *string <= '9') && is_number(string + 1));
+	return (
+		((*string >= '0' && *string <= '9') || *string == '-')
+		&& is_number(string + 1)
+	);
 }
 /**
 *main - Entrypoint
@@ -38,15 +41,15 @@ int main(int argc, char *argv[])
 {
 	int count = 0, cents = atoi(*(argv + 1));
 
-	if (cents < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
 	if (argc != 2 || !is_number(*(argv + 1)))
 	{
 		printf("Error\n");
 		return (1);
+	}
+	if (cents < 0)
+	{
+		printf("0\n");
+		return (0);
 	}
 	while (cents)
 		if (change(&cents, &count, 25))
