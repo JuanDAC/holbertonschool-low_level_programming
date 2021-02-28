@@ -10,7 +10,10 @@ int is_zero(char *string)
 {
 	if (*string == '\0')
 		return (1);
-	return ((*string == '0') && is_zero(string + 1));
+	return (
+		((*string >= '0' && *string <= '9') || *string == '-')
+		&& is_zero(string + 1)
+	);
 }
 /**
  * main - adds positive numbers
