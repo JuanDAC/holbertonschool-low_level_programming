@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -11,7 +10,7 @@ int is_zero(char *string)
 {
 	if (*string == '\0')
 		return (1);
-	return ((*string == '0') && is_zero(s + 1));
+	return ((*string == '0') && is_zero(string + 1));
 }
 /**
  * main - adds positive numbers
