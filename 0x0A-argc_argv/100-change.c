@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	if (cents < 0)
+	if (cents <= 0)
 		cents = 0;
 	while (cents)
 		if (change(&cents, &count, 25))
