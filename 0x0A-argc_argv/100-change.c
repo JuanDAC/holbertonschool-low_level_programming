@@ -36,30 +36,30 @@ int is_number(char *string)
 */
 int main(int argc, char *argv[])
 {
-	int count = 0, cents;
+	int count = 0, cents = atoi(*(argv + 1));
 
+	if (cents < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
 	if (argc != 2 || !is_number(*(argv + 1)))
 	{
 		printf("Error\n");
 		return (1);
 	}
-	cents = atoi(*(argv + 1));
-
 	while (cents)
-	if (change(&cents, &count, 25))
-	{}
-	else if (change(&cents, &count, 10))
-	{}
-	else if (change(&cents, &count, 5))
-	{}
-	else if (change(&cents, &count, 2))
-	{}
-	else if (change(&cents, &count, 1))
-	{}
-
-
+		if (change(&cents, &count, 25))
+		{}
+		else if (change(&cents, &count, 10))
+		{}
+		else if (change(&cents, &count, 5))
+		{}
+		else if (change(&cents, &count, 2))
+		{}
+		else if (change(&cents, &count, 1))
+		{}
 	printf("%d\n", count);
-
 	return (0);
 }
 
