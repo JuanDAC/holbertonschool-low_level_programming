@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("ERORR\n");
+		printf("Error\n");
 		return (EXIT_FAILURE);
 	}
 	if (atoi(*(argv + 1)) > 0)
