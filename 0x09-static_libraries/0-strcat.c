@@ -2,15 +2,6 @@
 #include <stdio.h>
 
 /**
-* length - length str
-* @dest: - pointer
-* Return: length (Success)
-*/
-int length(char *dest)
-{
-	return ((*dest != '\0') ? 1 + length(dest + 1) : 0);
-}
-/**
 * _strcat - ry point
 * @dest: - pointer
 * @src: - pointer
@@ -18,16 +9,7 @@ int length(char *dest)
 */
 char *_strcat(char *dest, char *src)
 {
-	char *dest_itter = dest + length(dest);
-
-	while (*src != '\0')
-	{
-		*dest_itter = *src;
-		src = src + 1;
-		dest_itter = dest_itter + 1;
-	}
-	*dest_itter = *src;
-
+	dest = src;
 	return (dest);
 }
 

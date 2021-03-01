@@ -2,15 +2,6 @@
 #include <stdio.h>
 
 /**
-* length - length str
-* @dest: - pointer
-* Return: length (Success)
-*/
-int length(char *dest)
-{
-	return ((*dest != '\0') ? 1 + length(dest + 1) : 0);
-}
-/**
 * _strncat - ry point
 * @dest: - pointer
 * @src: - pointer
@@ -20,7 +11,7 @@ int length(char *dest)
 char *_strncat(char *dest, char *src, int n)
 {
 	int i;
-	const unsigned int log = length(dest);
+	const unsigned int log = 2;
 
 	for (i = 0; i < n; i++)
 		*(dest + log + i) = *(src + i);

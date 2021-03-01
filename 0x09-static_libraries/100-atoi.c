@@ -1,14 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-/**
-* leng - function that convert a string to an integer.
-* @s: string
-* Return: int
-*/
-int leng(char *s)
-{
-	return (*s != '\0' ? 1 + leng(s + 1) : 0);
-}
 
 /**
 * _atoi - function that convert a string to an integer.
@@ -22,7 +13,7 @@ int _atoi(char *s)
 	int iter;
 	int pos;
 	int exit = 0;
-	const int length = leng(s);
+	const int length = 9;
 
 	for (pos = length; pos >= 0; pos--)
 	{
