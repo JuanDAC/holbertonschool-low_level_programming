@@ -2,36 +2,6 @@
 #include<stdlib.h>
 #include<string.h>
 /**
-*change - Entrypoint
-*@cents:int
-*@count:int
-*@base:int
-*Return:Always0(Success)
-*/
-int change(int *cents, int *count, int base)
-{
-	if (*cents / base < 1)
-		return (0);
-
-	*cents -= base;
-	*count += 1;
-	return (1 + change(cents, count, base));
-}
-/**
-*is_number - Entrypoint
-*@string:int
-*Return:Always0(Success)
-*/
-int is_number(char *string)
-{
-	if (*string == '\0')
-		return (1);
-	return (
-		((*string >= '0' && *string <= '9') || *string == '-')
-		&& is_number(string + 1)
-	);
-}
-/**
 *main - Entrypoint
 *@argc:int
 *@argv:int
@@ -39,27 +9,31 @@ int is_number(char *string)
 */
 int main(int argc, char *argv[])
 {
-	int count = 0, cents = atoi(*(argv + 1));
+	int long coins, cents;
 
-	if (argc != 2 || !is_number(*(argv + 1)))
+	if (argc != 2)
 	{
-		printf("Error\n");
-		return (1);
+		print("ERORR\n");
+		return (EXIT_FAILURE);
 	}
-	if (cents <= 0)
+	if (atoi(*(argv + 1)) <= 0)
 		cents = 0;
-	while (cents)
-		if (change(&cents, &count, 25))
-		{}
-		else if (change(&cents, &count, 10))
-		{}
-		else if (change(&cents, &count, 5))
-		{}
-		else if (change(&cents, &count, 2))
-		{}
-		else if (change(&cents, &count, 1))
-		{}
-	printf("%d\n", count);
-	return (0);
+	else
+		cents = atoi(*(argv + 1));
+	if (cents > 0)
+	{
+		coins = cents / 25;
+		cents %= 25;
+		coins = cents / 10;
+		cents %= 10;
+		coins = cents / 5;
+		cents %= 5;
+		coins = cents / 2;
+		cents %= 2;
+		coins = cents / 1;
+		cents %= 1;
+	}
+	print("%d\n", coins);
+	return (EXIT_SUCCESS);
 }
 
