@@ -1,13 +1,19 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
-* main - Entry point
-* @ :
+* alloc_grid - Entry point
+* @width: char
+* @height: char
 * Return: Always 0 (Success)
 */
-int main(void)
+int **alloc_grid(int width, int height)
 {
-	
-	return (0);
+	int i;
+	int **matrix = (int **)malloc(sizeof(int *) * height);
+
+	for (i = 0; i < height; i++)
+		*(matrix + i) = (int *)malloc(sizeof(int) * width);
+	return (matrix);
 }
 

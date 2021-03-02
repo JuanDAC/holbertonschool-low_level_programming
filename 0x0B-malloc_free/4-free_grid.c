@@ -1,13 +1,18 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
-* main - Entry point
-* @ :
+* free_grid - Entry point
+* @grid: char
+* @height: char
 * Return: Always 0 (Success)
 */
-int main(void)
+void free_grid(int **grid, int height)
 {
-	
-	return (0);
+	int i;
+
+	for (i = 0; i < height; i++)
+		free(*(grid + i));
+	free(grid);
 }
 

@@ -1,13 +1,31 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
-* main - Entry point
-* @ :
+* length - Entry point
+* @string: char
 * Return: Always 0 (Success)
 */
-int main(void)
+int length(char *string)
 {
-	
-	return (0);
+	return ((*string == '\0') ? 0 : 1 + length(string + 1));
+}
+/**
+* str_concat - Entry point
+* @s1: char
+* @s2: char
+* Return: Always 0 (Success)
+*/
+char *str_concat(char *s1, char *s2)
+{
+	int i, j, length_str = length(s1) + length(s2) + 1;
+	char *str = malloc(sizeof(char) * length_str);
+
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(str + i) = *(s1 + i);
+	for (j = 0; *(s2 + j) != '\0'; i++, j++)
+		*(str + i) = *(s2 + j);
+	*(str + i) = '\0';
+	return (str);
 }
 
