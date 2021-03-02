@@ -38,6 +38,9 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 	new_str = (char *)malloc(sizeof(char));
+	if (new_str == NULL)
+		return (NULL);
+
 	return (_strcopi(str, new_str, 0));
 }
 
