@@ -1,27 +1,13 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
-* _strcopi - function that returns a pointer to a
-*           newly allocated space in memory, which
-*           contains a copy of the string given a
-*           sa parameter.
-* @str: copy
+* length - function that returns a pointer to a
 * @src: copy
-* @i: copy
 * Return: NULL if str = NULL
 */
-char *_strcopi(char *src, char *str, int i)
+int length(char *src)
 {
-	if (*(src + i) == '\0')
-	{
-		*(str + i) = *(src + i);
-		return (str);
-	}
-	str = (char *)realloc(str, sizeof(char) * (i + 1));
-	if (str == NULL)
-		return (NULL);
-	*(str + i) = *(src + i);
-	return (_strcopi(src, str, i + 1));
+	return ((src == '\0') ? 0 : 1 + length(src));
 }
 /**
 * _strdup - function that returns a pointer to a
@@ -34,13 +20,16 @@ char *_strcopi(char *src, char *str, int i)
 char *_strdup(char *str)
 {
 	char *new_str;
+	unsigned int i, longitud = (length(str) + 1);
 
 	if (str == NULL)
 		return (NULL);
-	new_str = (char *)malloc(sizeof(char));
+	new_str = (char *)malloc(sizeof(char) * longitud);
 	if (new_str == NULL)
 		return (NULL);
+	for (i = 0; i < longitud; i++)
+		*(new_str + i) = *(str + i);
 
-	return (_strcopi(str, new_str, 0));
+	return ();
 }
 
