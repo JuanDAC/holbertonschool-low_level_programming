@@ -22,10 +22,10 @@ char *_strdup(char *str)
 	char *new_str;
 	unsigned int i, longitud = length(str);
 
-	new_str = (char *)malloc(sizeof(char) * longitud - 1);
+	new_str = (char *)malloc(sizeof(char) * longitud);
 	if (str == NULL || new_str == NULL)
 		return (NULL);
-	for (i = 0; i < longitud; i++)
+	for (i = 0; i <= longitud; i++)
 		*(new_str + i) = *(str + i);
 
 	return (new_str);
