@@ -11,9 +11,9 @@
 */
 char *array_fill(char *array, unsigned int size, char c)
 {
-	*(array + size) = c;
 	if (size == 0)
 		return (array);
+	*(array + size - 1) = c;
 	return (array_fill(array, size - 1, c));
 }
 /**
@@ -28,6 +28,8 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 	char *array = (char *)malloc(size * sizeof(char));
+
+
 
 	return (array_fill(array, size, c));
 }
