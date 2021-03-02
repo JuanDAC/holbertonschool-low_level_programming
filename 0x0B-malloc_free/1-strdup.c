@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
 * _strcopi - function that returns a pointer to a
@@ -19,6 +18,8 @@ char *_strcopi(char *src, char *str, int i)
 		return (str);
 	}
 	str = (char *)realloc(str, sizeof(char) * (i + 1));
+	if (str == NULL)
+		return (NULL);
 	*(str + i) = *(src + i);
 	return (_strcopi(src, str, i + 1));
 }
