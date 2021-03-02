@@ -20,8 +20,11 @@ int length(char *src)
 char *_strdup(char *str)
 {
 	char *new_str;
-	unsigned int i, longitud = length(str);
+	unsigned int i, longitud;
 
+	if (str == NULL)
+		return (NULL);
+	longitud = length(str);
 	new_str = (char *)malloc(sizeof(char) * longitud);
 
 	if (str == NULL || new_str == NULL || longitud == 0)
