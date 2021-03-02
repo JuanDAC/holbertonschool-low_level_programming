@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
 * create_array - create a array than custom size and
@@ -11,11 +10,11 @@
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
+	char *array;
 
 	if (size == 0)
 		return (NULL);
-	char *array = (char *)malloc(size * sizeof(char));
-
+	array = (char *)malloc(sizeof(char) * size);
 	for (i = 0; i < size; i++)
 		*(array + i) = c;
 
