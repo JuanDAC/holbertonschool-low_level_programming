@@ -7,7 +7,7 @@
 */
 int length(char *src)
 {
-	return ((src == '\0') ? 0 : 1 + length(src));
+	return ((*src == '\0') ? 1 : 1 + length(src + 1));
 }
 /**
 * _strdup - function that returns a pointer to a
