@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+* lenght - Entry point
+* @string: int
+* Return: Always 0 (Success)
+*/
+int lenght(char *string)
+{
+	return ((*string == '\0') ? 1 : 1 + lenght(string + 1));
+}
+/**
 * str_concat - Entry point
 * @s1: char
 * @s2: char
@@ -18,8 +27,8 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = ("");
 
-	length_s1 = sizeof(s1);
-	length_s2 = sizeof(s2);
+	length_s1 = lenght(s1);
+	length_s2 = lenghtt(s2);
 	str = malloc(sizeof(char) * (length_s1 + length_s2 - 1));
 
 	if (str == NULL)
