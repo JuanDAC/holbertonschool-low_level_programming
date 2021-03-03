@@ -8,7 +8,7 @@
 */
 int lenght(char *string)
 {
-	return ((*string == '\0') ? 1 : 1 + lenght(string + 1));
+	return ((*string == '\0') ? 0 : 1 + lenght(string + 1));
 }
 /**
 * str_concat - Entry point
@@ -28,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 		s2 = ("");
 
 	length_s1 = lenght(s1);
-	length_s2 = lenghtt(s2);
+	length_s2 = lenght(s2);
 	str = malloc(sizeof(char) * (length_s1 + length_s2 - 1));
 
 	if (str == NULL)
