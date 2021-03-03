@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
 * length - Entry point
@@ -31,7 +30,7 @@ char *str_concat(char *s1, char *s2)
 		*(str + i) = *(s1 + i);
 	for (j = 0; *(s2 + j) != '\0'; i++, j++)
 		*(str + i) = *(s2 + j);
-	*(str + i) = '\0';
+	*(str + i) = *(s2 + j);
 	return (str);
 }
 
