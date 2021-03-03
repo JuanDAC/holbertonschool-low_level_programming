@@ -18,10 +18,8 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = ("");
 
-	length_s1 = sizeof((char [])s1);
+	length_s1 = sizeof(s1);
 	length_s2 = sizeof(s2);
-	printf("length_s1 -> %x\n", length_s1);
-	printf("length_s2 -> %u\n", length_s2);
 	str = malloc(sizeof(char) * (length_s1 + length_s2 - 1));
 
 	if (str == NULL)
