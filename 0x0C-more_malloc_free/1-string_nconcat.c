@@ -20,10 +20,16 @@ unsigned int length(char *string)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *string;
-	unsigned int min_length = (n <= length(s2)) ? n : length(s2);
-	unsigned int i, j, string_length = length(s1) + min_length + 1;
+	unsigned int min_length;
+	unsigned int i, j, string_length;
+
+	s1 = (s1 == NULL) ? ("") : s1;
+	s2 = (s2 == NULL) ? ("") : s2;
+	min_length = (n <= length(s2)) ? n : length(s2);
+	string_length = length(s1) + min_length + 1;
 
 	string = malloc(string_length * sizeof(*string));
+
 	if (string == NULL)
 		return (NULL);
 
