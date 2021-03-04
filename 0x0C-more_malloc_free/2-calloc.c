@@ -1,11 +1,12 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+#define CHARACTER_NULL 1
 /**
 * _calloc - Entry point
 * @nmemb: unsigned int
 * @size: unsigned int
-* Return: Always 0 (Success)
+* Return: Always (buffer)
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -14,7 +15,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	buffer = malloc(nmemb * size);
+	buffer = malloc((nmemb * size) + CHARACTER_NULL);
 	if (buffer == NULL)
 		return (NULL);
 
