@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
 * array_range - Entry point
 * @min: int
@@ -8,7 +9,7 @@
 */
 int *array_range(int min, int max)
 {
-	int i, length = (max - min);
+	int i, length = (max - min) + 1;
 	int *array;
 
 	if (min > max)
