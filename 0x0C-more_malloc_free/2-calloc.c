@@ -1,13 +1,22 @@
 #include holberton.h
 #include <stdio.h>
 /**
-* main - Entry point
-* @ :
+* _calloc - Entry point
+* @nmemb: unsigned int
+* @size: unsigned int
 * Return: Always 0 (Success)
 */
-int main(void)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	
-	return (0);
+	void *buffer;
+
+	if (nmemb == 0, size == 0)
+		return (NULL);
+
+	buffer = malloc(nmemb * size);
+	if (buffer == NULL)
+		return (NULL);
+
+	return (buffer);
 }
 
