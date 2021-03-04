@@ -1,13 +1,27 @@
-#include holberton.h
+#include "holberton.h"
 #include <stdio.h>
 /**
-* main - Entry point
-* @ :
+* array_range - Entry point
+* @min: int
+* @max: int
 * Return: Always 0 (Success)
 */
-int main(void)
+int *array_range(int min, int max)
 {
-	
-	return (0);
+	int i, length = (max - min);
+	int *array;
+
+	if (min > max)
+		return (NULL);
+
+	array = malloc(length * sizeof(*array));
+
+	if (array == NULL)
+		return (NULL);
+
+	for (i = 0; min <= max; min++, i++)
+		*(array + i) = min;
+
+	return (array);
 }
 
