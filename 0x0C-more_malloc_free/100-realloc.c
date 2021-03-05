@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
 * _realloc - Entry point
 * @ptr: void *
@@ -9,8 +10,8 @@
 */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *stream;
-	int i;
+	char *stream;
+	unsigned int i;
 
 	if (new_size == old_size)
 		return (ptr);
@@ -26,9 +27,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 
 	for (i = 0; i < old_size; i++)
-		*(stream + i) = *(ptr + i);
+		*(stream + i) = *((char *)ptr + i);
 
 	free(ptr);
 
-	return (stream);
+	return ((void *)stream);
 }
