@@ -1,3 +1,4 @@
-#ifndef ABD
-#define ABS(x) (((x) < 0) ? ((x) * -1) : (x))
-#endif /*#ifndef ABD*/
+#ifndef HAVE_ABS
+#define HAVE_ABS
+#define ABS(x) (((x) < 0) ? (-(x)) : (x))
+#endif /* #ifndef ABS */
