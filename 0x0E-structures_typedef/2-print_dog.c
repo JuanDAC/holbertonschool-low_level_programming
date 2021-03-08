@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
-#define NILL "(nill)"
+#define NILL "(nil)"
 /**
 * print_dog - Entry point
 * @d: struct dog *
@@ -10,12 +10,11 @@ void print_dog(struct dog *d)
 {
 	if (d == NULL)
 		return;
-	else
-		printf(
-			"Name: %s\nAge: %f\nOwner: %s\n",
-			(d->name == NULL) ? NILL : d->name ,
-			d->age,
-			(d->owner == NULL) ? NILL : d->name
-		);
+	printf(
+		"Name: %s\nAge: %f\nOwner: %s\n",
+		(d->name == NULL) ? NILL : d->name,
+		d->age,
+		(d->owner == NULL) ? NILL : d->name
+	);
 }
 
