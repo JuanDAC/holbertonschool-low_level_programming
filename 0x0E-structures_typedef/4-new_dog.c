@@ -39,8 +39,6 @@ char *str_copy(char *string)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *my_new_dog;
-	int long_name;
-	int long_owner;
 
 	my_new_dog = malloc(sizeof(dog_t));
 	if (my_new_dog == NULL)
