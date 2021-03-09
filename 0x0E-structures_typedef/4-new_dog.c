@@ -25,7 +25,7 @@ char *str_copy(char *string)
 	new_str = malloc(length(string));
 	if (new_str == NULL)
 		return (NULL);
-	for (i = 0; i < length(string); i++)
+	for (i = 0; i <= length(string); i++)
 		*(new_str + i) = *(string + i);
 	return (new_str);
 }
