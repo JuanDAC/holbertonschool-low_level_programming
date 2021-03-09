@@ -45,12 +45,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	my_new_dog->name = str_copy(name);
-	if (my_new_dog->name == NULL)
+	if (my_new_dog->name == NULL && !name)
 		return (NULL);
 
 	my_new_dog->age = age;
 	my_new_dog->owner = str_copy(owner);
-	if (my_new_dog->owner == NULL)
+	if (my_new_dog->owner == NULL && !owner)
 		return (NULL);
 
 	return (my_new_dog);
