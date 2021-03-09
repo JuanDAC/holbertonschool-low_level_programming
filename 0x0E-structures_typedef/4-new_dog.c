@@ -8,7 +8,7 @@
 */
 int length(char *string)
 {
-	return ((*string == '\0') ? 1 : 1 + length(string + 1));
+	return ((*string == '\0') ? 0 : 1 + length(string + 1));
 }
 /**
 * str_copy - get leng
@@ -22,11 +22,12 @@ char *str_copy(char *string)
 
 	if (string == NULL)
 		return (NULL);
-	new_str = malloc(length(string) * sizeof(*new_str));
-	if (new_str == NULL)
+	new_str = malloc((length(string) + 1) * sizeof(*new_str));
+	if (!new_str)
 		return (NULL);
-	for (i = 0; i < length(string); i++)
+	for (i = 0; string[i]; i++)
 		*(new_str + i) = *(string + i);
+	*(new_str + i) = '\0';
 	return (new_str);
 }
 /**
@@ -43,17 +44,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	my_new_dog = malloc(sizeof(dog_t));
 	if (my_new_dog == NULL)
 		return (NULL);
-
 	my_new_dog->name = str_copy(name);
-	if (my_new_dog->name == NULL && name != NULL)
-		return (NULL);
-
 	my_new_dog->age = age;
-
 	my_new_dog->owner = str_copy(owner);
-	if (my_new_dog->owner == NULL && owner != NULL)
-		return (NULL);
-
 	return (my_new_dog);
 }
 
