@@ -23,14 +23,13 @@ char *str_copy(char *string)
 	if (string == NULL)
 		return (NULL);
 	len = length(string);
-	new_str = malloc((len + 1) * sizeof(char));
+	new_str = malloc(sizeof(char) * (len + 1));
 	if (!new_str)
 		return (NULL);
 	for (i = 0; string[i]; i++)
 		new_str[i] = string[i];
 	new_str[i] = '\0';
 	return (new_str);
-	free(new_str);
 }
 /**
 * new_dog - Entry point
@@ -44,7 +43,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *my_new_dog;
 
 	my_new_dog = malloc(sizeof(dog_t));
-	if (my_new_dog == NULL)
+	if (!my_new_dog)
 		return (NULL);
 	my_new_dog->name = str_copy(name);
 	my_new_dog->age = age;
