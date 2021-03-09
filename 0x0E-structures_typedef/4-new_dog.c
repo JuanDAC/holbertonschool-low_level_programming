@@ -18,17 +18,19 @@ int length(char *string)
 char *str_copy(char *string)
 {
 	char *new_str;
-	int i;
+	int i, len;
 
 	if (string == NULL)
 		return (NULL);
-	new_str = malloc((length(string) + 1) * sizeof(*new_str));
+	len = length(string);
+	new_str = malloc((len + 1) * sizeof(char));
 	if (!new_str)
 		return (NULL);
 	for (i = 0; string[i]; i++)
-		*(new_str + i) = *(string + i);
-	*(new_str + i) = '\0';
+		new_str[i] = string[i];
+	new_str[i] = '\0';
 	return (new_str);
+	free(new_str);
 }
 /**
 * new_dog - Entry point
