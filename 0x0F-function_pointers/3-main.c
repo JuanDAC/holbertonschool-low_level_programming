@@ -36,6 +36,6 @@ int main(int arc, char *argv[])
 		printf(ERROR);
 		exit(99);
 	}
-	printf("%d", operation(atoi(*(argv + 1)), atoi(*(argv + 3))));
+	printf("%d\n", operation(atoi(*(argv + 1)), atoi(*(argv + 3))));
 
 }
