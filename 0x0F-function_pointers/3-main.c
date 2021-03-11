@@ -16,7 +16,7 @@ int main(int arc, char *argv[])
 	if (arc != 4)
 	{
 		printf(ERROR);
-		return (98);
+		exit(98);
 	}
 	if (
 		(
@@ -27,13 +27,13 @@ int main(int arc, char *argv[])
 	)
 	{
 		printf(ERROR);
-		return (100);
+		exit(100);
 	}
 	operation = get_op_func(*(argv + 2));
 	if (operation == NULL)
 	{
 		printf(ERROR);
-		return (99);
+		exit(99);
 	}
 
 	printf("%d\n", operation(atoi(*(argv + 1)), atoi(*(argv + 3))));

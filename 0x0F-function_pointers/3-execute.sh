@@ -16,4 +16,6 @@ echo "./calc 1024 - 98";
 echo $(./calc 1024 - 98);
 echo "./calc 1024 '%' 98";
 echo $(./calc 1024 '%' 98);
+echo "./calc 1024 - 1024";
+echo $(./calc 1024 - 1024);
 
