@@ -17,39 +17,36 @@ void print_all(const char * const format, ...)
 	char *current_string;
 
 	va_start(arg, format);
-	if (format != NULL)
-		while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
+	{
+		switch (format[i])
 		{
-			switch (format[i])
-			{
-				case 'c':
-					printf("%c", va_arg(arg, int));
-					separator = 1;
-				break;
-				case 'i':
-					printf("%d", va_arg(arg, int));
-					separator = 1;
-				break;
-				case 'f':
-					printf("%f", va_arg(arg, double));
-					separator = 1;
-				break;
-				case 's':
-					current_string = va_arg(arg, char *);
-					if (current_string == NULL)
-						printf(NILL);
-					else
-						printf("%s", current_string);
-					separator = 1;
-				break;
-			}
-			i++;
-			while (format[i] != '\0' && separator == 1)
-			{
-				printf(SEPARATOR);
-				separator = 0;
-			}
+			case 'c':
+				printf("%c", va_arg(arg, int));
+				separator = 1;
+			break;
+			case 'i':
+				printf("%d", va_arg(arg, int));
+				separator = 1;
+			break;
+			case 'f':
+				printf("%f", va_arg(arg, double));
+				separator = 1;
+			break;
+			case 's':
+				current_string = va_arg(arg, char *);
+				if (current_string == NULL)
+					printf(NILL);
+				else
+					printf("%s", current_string);
+				separator = 1;
+			break;
 		}
+		i++;
+		if (format[i] != '\0' && separator == 1)
+			printf(SEPARATOR);
+		separator = 0;
+	}
 	va_end(arg);
 	printf("\n");
 }
