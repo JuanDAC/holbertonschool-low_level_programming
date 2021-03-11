@@ -19,12 +19,11 @@ int main(int arc, char *argv[])
 		exit(98);
 	}
 	if (
-		*(*(argv + 3) + 1) == '\0'
-		&& (
-			**(argv + 3) == '/'
-			|| **(argv + 3) == '%'
+		(
+			*(argv[2]) == '/'
+			|| *(argv[2]) == '%'
 		)
-		&& **(argv + 4) == '0'
+		&& *(argv[3]) == '0'
 	)
 	{
 		printf(ERROR);
@@ -36,6 +35,7 @@ int main(int arc, char *argv[])
 		printf(ERROR);
 		exit(99);
 	}
-	printf("%d\n", operation(atoi(*(argv + 1)), atoi(*(argv + 3))));
 
+	printf("%d\n", operation(atoi(*(argv + 1)), atoi(*(argv + 3))));
 }
+
