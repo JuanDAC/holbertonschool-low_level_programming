@@ -1,9 +1,5 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#define SEPARATOR ", "
-#define NILL "(nil)"
 
 /**
 * print_all - Entry point
@@ -17,7 +13,7 @@ void print_all(const char * const format, ...)
 	char *current_string;
 
 	va_start(arg, format);
-	while (format != NULL && format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		switch (format[i])
 		{
@@ -36,7 +32,7 @@ void print_all(const char * const format, ...)
 			case 's':
 				current_string = va_arg(arg, char *);
 				if (current_string == NULL)
-					printf(NILL);
+					printf("(nil)");
 				else
 					printf("%s", current_string);
 				separator = 1;
@@ -44,7 +40,7 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 		if (format[i] != '\0' && separator == 1)
-			printf(SEPARATOR);
+			printf(", ");
 		separator = 0;
 	}
 	va_end(arg);
