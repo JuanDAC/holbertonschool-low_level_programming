@@ -1,5 +1,4 @@
 #include "3-calc.h"
-#define LAST 5
 
 /**
 * get_op_func - chouse a function
@@ -18,7 +17,7 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	while (i < LAST)
+	while (i < 5)
 	{
 		if (s[1] == '\0' && *(ops[i]).op == *s)
 			return ((ops + i)->f);
