@@ -1,49 +1,46 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
-
+#define NILL "(nil)"
+#define SEPARATOR ", "
 /**
-* print_all - Entry point
-* @format: const unsigned int
-* Return: Always 0 (Success)
+* print_all - print everything
+* @format: list of types of arguments
+* Return: return always void
 */
 void print_all(const char * const format, ...)
 {
-	va_list arg;
-	int i = 0, separator = 0;
-	char *current_string;
+	int i = 0;
+	char *current_string, *separator = "";
+	va_list types_to_print;
 
-	va_start(arg, format);
-	while (format[i] != '\0')
+	va_start(types_to_print, format);
+
+	while (format != '\0' && *(format + i) != '\0')
 	{
-		switch (format[i])
+		switch (*(format + i))
 		{
 			case 'c':
-				printf("%c", va_arg(arg, int));
-				separator = 1;
-			break;
+				printf("%s%c", separator, va_arg(types_to_print, int));
+				break;
 			case 'i':
-				printf("%d", va_arg(arg, int));
-				separator = 1;
-			break;
+				printf("%s%d", separator, va_arg(types_to_print, int));
+				break;
 			case 'f':
-				printf("%f", va_arg(arg, double));
-				separator = 1;
-			break;
+				printf("%s%f", separator, va_arg(types_to_print, double));
+				break;
 			case 's':
-				current_string = va_arg(arg, char *);
+				current_string = va_arg(types_to_print, char *);
 				if (current_string == NULL)
-					printf("(nil)");
-				else
-					printf("%s", current_string);
-				separator = 1;
-			break;
+					current_string = NILL;
+				printf("%s%s", separator, current_string);
+				break;
+			default:
+				i++;
+				continue;
 		}
+		separator = SEPARATOR;
 		i++;
-		if (format[i] != '\0' && separator == 1)
-			printf(", ");
-		separator = 0;
 	}
-	va_end(arg);
 	printf("\n");
+	va_end(types_to_print);
 }
-
