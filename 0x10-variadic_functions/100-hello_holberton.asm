@@ -13,6 +13,6 @@ main:
 	int 80h
 
 holbie_message:
-	db "Hello, Holberton", 10, 0
+	db "Hello, Holberton", 10
 length_message:
 	equ $ - holbie_message
