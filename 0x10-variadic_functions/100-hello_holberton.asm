@@ -4,15 +4,13 @@ section .data
 main:
 	mov rax, 4
 	mov rbx, 1
-	mov rcx, holbie_message
-	mov rdx, length_message
+	mov rcx, holbiemessage
+	mov rdx, lengthmessage
 	int 80h
 
 	mov rax, 1
 	mov rbx, 0
 	int 80h
 
-holbie_message:
-	db "Hello, Holberton", 10
-length_message:
-	equ $ - holbie_message
+holbiemessage:		db "Hello, Holberton", 10
+lengthmessage:		equ $ - holbiemessage
