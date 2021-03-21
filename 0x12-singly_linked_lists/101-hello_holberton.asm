@@ -9,6 +9,3 @@ main:
 	mov		rdi,	format
 	mov		rax,	0
 	call	printf
-
-	mov		rbx,	0
-
