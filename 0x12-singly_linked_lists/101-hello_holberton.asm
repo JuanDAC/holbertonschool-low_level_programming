@@ -11,5 +11,4 @@ main:
 	call	printf
 
 	mov		rbx,	0
-	mov		rax,	1
 
