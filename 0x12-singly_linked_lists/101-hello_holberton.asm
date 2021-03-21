@@ -12,5 +12,4 @@ main:
 
 	mov		rbx,	0
 	mov		rax,	1
-	int		0x80
 
