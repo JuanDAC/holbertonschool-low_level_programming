@@ -14,6 +14,7 @@ listint_t *create_node(const int n)
 		return (NULL);
 
 	new_node->n = n;
+	new_node->next = NULL;
 
 	return (new_node);
 }
