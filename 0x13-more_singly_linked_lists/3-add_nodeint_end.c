@@ -25,6 +25,9 @@ listint_t *create_node(const int n)
 */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
+	if (head == NULL)
+		return (NULL);
+
 	if (*head == NULL)
 	{
 		*head = create_node(n);
