@@ -37,7 +37,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	if ((*head)->next == NULL)
 	{
 		(*head)->next = create_node(n);
-		return (*head);
+		return ((*head)->next);
 	}
 
 	return (add_nodeint_end(&(*head)->next, n));
