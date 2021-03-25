@@ -9,8 +9,8 @@ int pop_listint(listint_t **head)
 	listint_t *head_to_revove;
 	int value_of_head;
 
-	if (head == NULL)
-		return (NULL);
+	if (head == NULL || *head == NULL)
+		return (0);
 
 	value_of_head = (*head)->n;
 	head_to_revove = *head;
