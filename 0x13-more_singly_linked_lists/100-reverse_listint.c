@@ -5,22 +5,22 @@
  * @node: current node at a linked list
  * Return: node head
  */
-listint_t *reverse_list(listint_t *node)
+listint_t *reverse_list(listint_t *node, listint_t **head)
 {
 	listint_t *current_head;
-	listint_t *move_at_node;
 
 	if (node->next == NULL)
+	{
+		*head = node;
 		return (node);
+	}
 
-	current_head = reverse_list(node->next);
+	current_head = reverse_list(node->next, head);
 
-	move_at_node = current_head;
-	while (move_at_node->next != NULL)
-		move_at_node = move_at_node->next;
 	node->next = NULL;
-	move_at_node->next = node;
-	return (current_head);
+	current_head->next = node;
+
+	return (node);
 }
 /**
  * reverse_listint - function that reverses a listint_t linked list.
@@ -33,7 +33,7 @@ listint_t *reverse_listint(listint_t **head)
 	if (head == NULL || *head == NULL)
 		return (NULL);
 
-	*head = reverse_list(*head);
+	reverse_list(*head, head);
 
 	return (*head);
 }
