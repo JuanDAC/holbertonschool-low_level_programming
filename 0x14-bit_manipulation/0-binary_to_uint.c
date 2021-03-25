@@ -34,7 +34,7 @@ unsigned int binary_to_uinterger(const char *b, size_t i)
 	if (*b == '\0')
 		return (0);
 
-	return (((*b == '1') * (1 << i)) + binary_to_uinterger(b + 1, i - 1));
+	return (((*b == '1') * (0x01 << i)) + binary_to_uinterger(b + 1, i - 1));
 }
 /**
 * binary_to_uint - Entry point
