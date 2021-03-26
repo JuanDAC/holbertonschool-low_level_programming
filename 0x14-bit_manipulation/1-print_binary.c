@@ -14,6 +14,7 @@ void binary(char *buffer, unsigned long int number, int index)
 
 	*(buffer + index) = (number & 0x1) + '0';
 
+	_putchar(*(buffer + index));
 	binary(buffer, number >> 1, index - 1);
 }
 /**
