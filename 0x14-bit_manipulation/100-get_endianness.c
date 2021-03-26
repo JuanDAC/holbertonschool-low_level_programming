@@ -1,13 +1,13 @@
-#include holberton.h
-#include <stdio.h>
-/**
-* main - Entry point
-* @ :
-* Return: Always 0 (Success)
-*/
-int main(void)
-{
-	
-	return (0);
-}
+#include "holberton.h"
 
+/**
+ * get_endianness - Write a function that checks the endianness.
+ * Return: 1 or 0.
+ */
+int get_endianness(void)
+{
+	unsigned int x = 1;
+	char *character = (char *) &x;
+
+	return ((int)*character);
+}
