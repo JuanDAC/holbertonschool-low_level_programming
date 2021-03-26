@@ -1,6 +1,6 @@
 
 #include "holberton.h"
-#define MAX_BINARY 52
+#define MAX_BINARY 80
 /**
 * binary - Entry point
 * @start_binary: start_binary
@@ -8,7 +8,11 @@
 * @index: index
 * Return: Always 0 (Success)
 */
-void binary(bool *start_binary, unsigned long int number, unsigned long int index)
+void binary(
+	bool *start_binary,
+	unsigned long int number,
+	unsigned long int index
+)
 {
 	if (index == MAX_BINARY)
 		return;
