@@ -1,13 +1,45 @@
-#include holberton.h
-#include <stdio.h>
+#include "holberton.h"
+#define MAX_BINARY 36
+
+size_t length_str(char *string)
+{
+	return ((*string == '\0') ? 0 : 1 + length_str(string + 1));
+}
 /**
-* main - Entry point
+* print_binary - Entry point
 * @ :
 * Return: Always 0 (Success)
 */
-int main(void)
+void binary(char *buffer, unsigned long int number, int index)
 {
-	
-	return (0);
-}
+	if (index == 0)
+		return;
 
+	*(buffer + index) = (number & 0x1) + '0';
+
+	binary(buffer, number >> 1, index - 1);
+}
+/**
+* print_binary - Entry point
+* @ :
+* Return: Always 0 (Success)
+*/
+void print_binary(unsigned long int n)
+{
+	char buffer[MAX_BINARY];
+	unsigned int i;
+	bool start_binary = false;
+
+	if (n == 0)
+		_putchar('0');
+
+	binary(buffer, n, MAX_BINARY - 1);
+
+	for (i = 1; i < MAX_BINARY; i++)
+	{
+		if (!start_binary && buffer[i] == '1')
+			start_binary = true;
+		if (start_binary)
+			_putchar(buffer[i]);
+	}
+}
