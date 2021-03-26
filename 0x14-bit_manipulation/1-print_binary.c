@@ -1,13 +1,19 @@
 #include "holberton.h"
 #define MAX_BINARY 36
-
+/**
+ * length_str - length str
+ * @string: string
+ * Return: size_t length string
+ */
 size_t length_str(char *string)
 {
 	return ((*string == '\0') ? 0 : 1 + length_str(string + 1));
 }
 /**
-* print_binary - Entry point
-* @ :
+* binary - Entry point
+* @buffer: buffer string
+* @number: number
+* @index: index
 * Return: Always 0 (Success)
 */
 void binary(char *buffer, unsigned long int number, int index)
@@ -21,7 +27,7 @@ void binary(char *buffer, unsigned long int number, int index)
 }
 /**
 * print_binary - Entry point
-* @ :
+* @n: number to comvert binary
 * Return: Always 0 (Success)
 */
 void print_binary(unsigned long int n)
