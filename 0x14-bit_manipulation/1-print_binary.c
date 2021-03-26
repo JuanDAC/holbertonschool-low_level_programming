@@ -1,15 +1,6 @@
 #include "holberton.h"
 #define MAX_BINARY 36
 /**
- * length_str - length str
- * @string: string
- * Return: size_t length string
- */
-size_t length_str(char *string)
-{
-	return ((*string == '\0') ? 0 : 1 + length_str(string + 1));
-}
-/**
 * binary - Entry point
 * @buffer: buffer string
 * @number: number
