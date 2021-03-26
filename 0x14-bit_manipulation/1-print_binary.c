@@ -1,6 +1,6 @@
 
 #include "holberton.h"
-#define MAX_BINARY 36
+#define MAX_BINARY 40
 /**
 * binary - Entry point
 * @start_binary: start_binary
