@@ -39,14 +39,14 @@ int binary(
 	unsigned long int number,
 	unsigned long int index,
 	unsigned int idx,
-	size_t max
+	unsigned long int max
 )
 {
 	if (index == max)
 		return (-1);
 
 	if (index == idx)
-		return ((number & 0x1));
+		return (number & 0x1);
 
 	return (binary(number >> 1, index + 1, idx, max));
 }
@@ -59,7 +59,7 @@ int binary(
 int get_bit(unsigned long int n, unsigned int index)
 {
 	bool start_binary = false;
-	size_t length_binary;
+	unsigned long int length_binary;
 
 	if (n == 0)
 		return ((index == 0) ? 0 : -1);
@@ -68,3 +68,4 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	return (binary(n, 0, index, length_binary));
 }
+
