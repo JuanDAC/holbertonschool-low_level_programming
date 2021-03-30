@@ -16,10 +16,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t number_of_bytes_written;
 
 	file_id = open(filename, O_RDONLY);
+	if (file_id == -1)
+		return (0);
 
 	buffer = malloc(sizeof(*filename) * letters);
 
-	if ((file_id == -1) | (filename == NULL) | (buffer == NULL))
+	if ((filename == NULL) | (buffer == NULL))
 	{
 		close(file_id);
 		return (0);
