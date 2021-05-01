@@ -1,13 +1,16 @@
-#include holberton.h
-#include <stdio.h>
+#include "lists.h"
+
 /**
-* main - Entry point
-* @ :
+* dlistint_len - Print linked int
+* @h: node of a dlistint t
 * Return: Always 0 (Success)
 */
-int main(void)
+size_t dlistint_len(const dlistint_t *h)
 {
-	
-	return (0);
+	/* Base case */
+	if (h == NULL)
+		return (0);
+	/* Sumetion */
+	return (1 + dlistint_len(h->next));
 }
 
