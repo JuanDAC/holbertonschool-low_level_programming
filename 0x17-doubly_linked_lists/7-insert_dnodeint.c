@@ -1,6 +1,23 @@
 #include "lists.h"
 #include <stdio.h>
 /**
+ * create_node - make node and define pointer to NULL
+ * @new_node: pointer to the variable storage the pointer to new node
+ * @n: value or data to storage in node
+ * Return: new node or NULL if fail
+ */
+int create_node(dlistint_t **new_node, int n)
+{
+	*new_node = malloc(sizeof(dlistint_t));
+	if (!new_node)
+		return (0);
+	(*new_node)->n = n;
+	(*new_node)->next = NULL;
+	(*new_node)->prev = NULL;
+	return (1);
+}
+
+/**
 * insert_dnodeint_at_index - Entry point
 * @h: head
 * @idx: index
@@ -16,48 +33,38 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (idx == 0)
 	{
-		new_node = malloc(sizeof(dlistint_t));
-		new_node->n = n;
+		if (!create_node(&new_node, n))
+			return (NULL);
 		new_node->next = *h;
-		new_node->prev = NULL;
 		if (*h)
 			(*h)->prev = new_node;
 		*h = new_node;
 		return (new_node);
 	}
 
-	if (*h == NULL)
+	if (!*h)
 		return (NULL);
 
 	if (!(*h)->next && idx == 1)
 	{
-		new_node = malloc(sizeof(dlistint_t));
-		new_node->n = n;
-		new_node->next = NULL;
-		new_node->prev = *h;
-		(*h)->next = new_node;
+		if (!create_node(&new_node, n))
+			return (NULL);
+		new_node->prev = *h, (*h)->next = new_node;
 		return (new_node);
 	}
 
 	if (idx == 1)
 	{
-		new_node = malloc(sizeof(dlistint_t));
-		new_node->n = n;
-		new_node->prev = (*h);
+		if (!create_node(&new_node, n))
+			return (NULL);
+		new_node->prev = *h;
 		if (*h)
-		{
-			new_node->next = (*h)->next;
-			(*h)->next->prev = new_node;
+			new_node->next = (*h)->next, (*h)->next->prev = new_node,
 			(*h)->next = new_node;
-		}
 		else
-		{
-			new_node->next = NULL;
 			*h = new_node;
-		}
 		return (new_node);
 	}
-
 	return (insert_dnodeint_at_index(&(*h)->next, idx - 1, n));
 }
 
