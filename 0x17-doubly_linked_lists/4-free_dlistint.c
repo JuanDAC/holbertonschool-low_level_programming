@@ -1,13 +1,14 @@
-#include holberton.h
-#include <stdio.h>
+#include "lists.h"
 /**
-* main - Entry point
-* @ :
+* free_dlistint - function that prints all the elements of a list_t list
+* @head: node head of a own list
 * Return: Always 0 (Success)
 */
-int main(void)
+void free_dlistint(dlistint_t *head)
 {
-	
-	return (0);
+	if (head == NULL)
+		return;
+	free_dlistint(head->next);
+	free(head);
 }
 
