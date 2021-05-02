@@ -1,13 +1,12 @@
-#include holberton.h
+#include "lists.h"
 #include <stdio.h>
 /**
-* main - Entry point
-* @ :
+* sum_dlistint - Entry point
+* @head: l
 * Return: Always 0 (Success)
 */
-int main(void)
+int sum_dlistint(dlistint_t *head)
 {
-	
-	return (0);
+	return ((!head ? 0 : head->n + sum_dlistint(head->next)));
 }
 
