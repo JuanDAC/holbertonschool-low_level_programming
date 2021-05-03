@@ -9,7 +9,7 @@
 dlistint_t *create_node(dlistint_t **new_node, int n)
 {
 	*new_node = malloc(sizeof(dlistint_t));
-	if (!new_node)
+	if (!*new_node)
 		return (NULL);
 	(*new_node)->n = n;
 	(*new_node)->next = NULL;
