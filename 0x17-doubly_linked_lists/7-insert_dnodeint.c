@@ -6,15 +6,15 @@
  * @n: value or data to storage in node
  * Return: new node or NULL if fail
  */
-int create_node(dlistint_t **new_node, int n)
+dlistint_t *create_node(dlistint_t **new_node, int n)
 {
 	*new_node = malloc(sizeof(dlistint_t));
 	if (!new_node)
-		return (0);
+		return (NULL);
 	(*new_node)->n = n;
 	(*new_node)->next = NULL;
 	(*new_node)->prev = NULL;
-	return (1);
+	return (*new_node);
 }
 
 /**
