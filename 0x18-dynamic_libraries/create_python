@@ -1,0 +1,9 @@
+#!/bin/bash
+gcc -fPIC -Wall -Werror -Wextra -pedantic -c ./*.c
+gcc ./*.c -c -fPIC
+gcc ./*.o -shared -o 100-operations.so
+
+ls -la lib*
+nm -D 100-operations.so
+
+rm ./*.o
