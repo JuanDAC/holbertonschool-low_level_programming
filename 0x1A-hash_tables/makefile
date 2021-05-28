@@ -1,31 +1,35 @@
-TARGET := hash_tables
+NAME := hash_tables
+CC := gcc
+DEBUGGER := gdb
+LEAK_CHECK:= valgrind
 CFLAGS := -g -std=gnu90 -Wall -pedantic -Werror -Wextra
 VFLAGS := --leak-check=full
 MAIN := 0-main.c
 DMAIN := ./test/
-FILES := *.c
+SRC := *.c
+RM=rm
 
 betty:
-	@betty $(FILES)
+	@betty $(SRC)
 
 build:
-	@betty $(FILES) \
-	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET)
+	@betty $(SRC) \
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME)
 
 run:
-	@betty $(FILES) \
-	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET) \
-	&& ./$(TARGET) \
-	&& rm -f ./$(TARGET)
+	@betty $(SRC) \
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME) \
+	&& ./$(NAME) \
+	&& $(RM) -f ./$(NAME)
 
 gdb:
-	@betty $(FILES) \
-	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET) \
-	&& gdb ./$(TARGET) \
-	&& rm -f $(TARGET)
+	@betty $(SRC) \
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME) \
+	&& $(DEBUGGER) ./$(NAME) \
+	&& $(RM) -f $(NAME)
 
 valgrind:
-	@betty $(FILES) \
-	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET) \
-	&& valgrind $(VFLAGS) ./$(TARGET) \
-	&& rm -f ./$(TARGET)
+	@betty $(SRC) \
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME) \
+	&& $(LEAK_CHECK) $(VFLAGS) ./$(NAME) \
+	&& $(RM) -f ./$(NAME)
