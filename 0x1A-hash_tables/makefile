@@ -1,5 +1,6 @@
 TARGET := hash_tables
 CFLAGS := -g -std=gnu90 -Wall -pedantic -Werror -Wextra
+VFLAGS := --leak-check=full
 MAIN := 0-main.c
 DMAIN := ./test/
 FILES := *.c
@@ -24,7 +25,7 @@ gdb:
 	&& rm -f $(TARGET)
 
 valgrind:
-	@betty $(FILES) 
+	@betty $(FILES) \
 	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET) \
-	&& valgrind ./$(TARGET) \
+	&& valgrind $(VFLAGS) ./$(TARGET) \
 	&& rm -f ./$(TARGET)
