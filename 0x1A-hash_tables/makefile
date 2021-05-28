@@ -1,22 +1,30 @@
-target := hash_tables
-cflags := -g -std=gnu90 -Wall -pedantic -Werror -Wextra
-main := 0-main.c
-files := 0-hash_table_create.c
+TARGET := hash_tables
+CFLAGS := -g -std=gnu90 -Wall -pedantic -Werror -Wextra
+MAIN := 0-main.c
+DMAIN := ./test/
+FILES := *.c
+
+betty:
+	@betty $(FILES)
 
 build:
-	@gcc $(cflags) ./test/$(main) $(files) -o $(target)
+	@betty $(FILES) \
+	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET)
 
 run:
-	@gcc $(cflags) ./test/$(main) $(files) -o $(target)
-	@./$(target)
-	@rm -f ./$(target)
+	@betty $(FILES) \
+	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET) \
+	&& ./$(TARGET) \
+	&& rm -f ./$(TARGET)
 
 gdb:
-	@gcc $(cflags) ./test/$(main) $(files) -o $(target)
-	@gdb ./$(target)
-	@rm -f ./$(target)
+	@betty $(FILES) \
+	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET) \
+	&& gdb ./$(TARGET) \
+	&& rm -f $(TARGET)
 
 valgrind:
-	@gcc $(cflags) ./test/$(main) $(files) -o $(target)
-	@valgrind ./$(target)
-	@rm -f ./$(target)
+	@betty $(FILES) 
+	&& gcc $(CFLAGS) $(DMAIN)$(MAIN) $(FILES) -o $(TARGET) \
+	&& valgrind ./$(TARGET) \
+	&& rm -f ./$(TARGET)
