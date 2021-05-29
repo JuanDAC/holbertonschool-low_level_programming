@@ -73,6 +73,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
+		strcpy(copy_key, key);
 		create_a_node(new_node, copy_value, copy_key, index, ht);
 		if (!new_node)
 		{
@@ -80,7 +81,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(copy_value);
 			return (0);
 		}
-		strcpy(copy_key, key);
 	}
 	return (0);
 }
