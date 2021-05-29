@@ -68,6 +68,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (navegate_to_node_match(current, key))
 	{
 		free(current->value);
+		free(copy_key);
 		current->value = copy_value;
 	}
 	else
