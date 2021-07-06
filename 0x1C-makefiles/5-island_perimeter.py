@@ -7,15 +7,20 @@ Function that returns the perimeter of the island described in grid
 def island_perimeter(grid):
     '''find permiter'''
     perimeter = 0
-    size = len(grid)
+    width  = len(grid)
 
     if not grid:
         return 0
 
-    for row in range(1, size - 1):
-        if (len(grid[row]) <= 2):
+    for row in range(0, size):
+        height = len(grid[row]);
+        if (height <= 2):
             continue
-        for col in range(1, size - 1):
+        for col in range(0, height):
+            if row == 0 or col == 0 or col == height - 1 or row == width - 1:
+                if (grid[row][col]):
+                    return 0
+
             if (grid[row][col]):
                 perimeter += grid[row][col - 1] == 0
                 perimeter += grid[row - 1][col] == 0
