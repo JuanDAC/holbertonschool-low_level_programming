@@ -19,7 +19,7 @@ int my_linear_search(int *array, size_t size, int value, int index)
 
 	printf(linear_search_format, index, array[index]);
 	if (array[index] == value)
-		return (0);
+		return (index);
 
 	return (my_linear_search(array, size - 1, value, index + 1));
 }
