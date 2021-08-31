@@ -20,8 +20,11 @@ int main(void)
 
 	for (i = 0; i < size; i++)
 	{
-		printf("|%d|__________________________________________________\n", (int)i + 1);
 		insize = sizeof(array[i]) / sizeof(array[i][0]);
+
+		printf("|%d|______________________________________________\n", (int)i + 1);
+		print_array(array[i], insize);
+		printf("__________________________________________________\n");
 		printf("Found %d at index: %d\n\n", 2, jump_search(array[i], insize, 2));
 		printf("Found %d at index: %d\n\n", 9, jump_search(array[i], 9, 9));
 		printf("Found %d at index: %d\n\n", 5, jump_search(array[i], 5, 5));

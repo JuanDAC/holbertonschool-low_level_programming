@@ -39,7 +39,7 @@ int my_jump_search(int *array, size_t size, int value, int index)
 {
 	int jump = 0, next = 0;
 
-	if (array == NULL)
+	if (array == NULL || size <= 0)
 		return (-1);
 
 	jump = sqrt(size);
