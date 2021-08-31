@@ -14,7 +14,7 @@
 
 int my_linear_search(int *array, size_t size, int value, int index)
 {
-	if (array == NULL || (int)size == index)
+	if (array == NULL || (int)size <= 0)
 		return (-1);
 
 	printf(linear_search_format, index, array[index]);

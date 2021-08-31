@@ -16,25 +16,25 @@ betty:
 build:
 	@betty $(SRC) \
 	&& betty *.h  \
-	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME)
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -lm -o $(NAME)
 
 run:
 	@betty $(SRC) \
 	&& betty *.h \
-	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME) \
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -lm -o $(NAME) \
 	&& ./$(NAME) \
 	&& $(RM) -f ./$(NAME)
 
 gdb:
 	@betty $(SRC) \
 	&& betty *.h \
-	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME) \
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -lm -o $(NAME) \
 	&& $(DEBUGGER) ./$(NAME) \
 	&& $(RM) -f $(NAME)
 
 valgrind:
 	@betty $(SRC) \
 	&& betty *.h \
-	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -o $(NAME) \
+	&& $(CC) $(CFLAGS) $(DMAIN)$(MAIN) $(SRC) -lm -o $(NAME) \
 	&& $(LEAK_CHECK) $(VFLAGS) ./$(NAME) \
 	&& $(RM) -f ./$(NAME)

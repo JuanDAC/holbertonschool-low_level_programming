@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 /**
  * struct skiplist_s - Singly linked list with an express lane
@@ -45,9 +46,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
 int advanced_binary(int *array, size_t size, int value);
 int exponential_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
-int jump_search(int *array, size_t size, int value);
-
 int my_linear_search(int *array, size_t size, int value, int index);
+int my_jump_search(int *array, size_t size, int value, int index);
 int binary_search(int *array, size_t size, int value);
 
 /*
@@ -62,6 +62,19 @@ int binary_search(int *array, size_t size, int value);
  */
 
 #define linear_search(A, S, V) my_linear_search((A), (S), (V), 0)
+
+/*
+ * jump_search - searches for a value in an array of integers using the
+ *                 Jump search algorithm
+ *
+ * @A: is a pointer to the first element of the array to search in
+ * @S: is the number of elements in array
+ * @V: is the value to search
+ *
+ * Return: the first index where value is located
+ */
+
+#define jump_search(A, S, V) my_jump_search((A), (S), (V), 0)
 
 /*
  * linear_search_format - string "Value checked array[%d] = [%d]\n"
