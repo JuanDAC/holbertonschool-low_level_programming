@@ -23,15 +23,15 @@ int binary_search(int *array, size_t size, int value)
 	index = (size - 1) / 2;
 
 	if (array[index] == value)
-		return (index + 1);
+		return (index);
 
 	if (array[index] > value)
 		return (binary_search(array, index, value));
 
-	value = binary_search(array + index + 1, size - index - 1, value);
+	value = 1 + binary_search(array + index + 1, size - index - 1, value);
 
-	if (value != -1)
+	if (value != 0)
 		return (index + value);
 
-	return (value);
+	return (-1);
 }
