@@ -49,7 +49,7 @@ int my_jump_search(int *array, size_t size, int value, int index)
 
 	if (array[next] >= value || index == (int)size - 1)
 	{
-		printf("Value found between indexes [%d] and [%d]\n", index, jump);
+		printf("Value found between indexes [%d] and [%d]\n", index, index + jump);
 		return (my_linear_search(array, (next - index) + 1, value, index));
 	}
 
