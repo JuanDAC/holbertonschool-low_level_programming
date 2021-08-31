@@ -48,7 +48,7 @@ int interpolation_search(int *array, size_t size, int value);
 int jump_search(int *array, size_t size, int value);
 
 int my_linear_search(int *array, size_t size, int value, int index);
-int my_binary_search(int *array, size_t size, int value, int index);
+int binary_search(int *array, size_t size, int value);
 
 /*
  * linear_search - searches for a value in an array of integers using the
@@ -62,19 +62,6 @@ int my_binary_search(int *array, size_t size, int value, int index);
  */
 
 #define linear_search(A, S, V) my_linear_search((A), (S), (V), 0)
-
-/*
- * binary_search - searches for a value in an array of integers using the
- *                 Linear search algorithm
- *
- * @A: is a pointer to the first element of the array to search in
- * @S: is the number of elements in array
- * @V: is the value to search
- *
- * Return: the first index where value is located
- */
-
-#define binary_search(A, S, V) my_binary_search((A), (S), (V), (int)(S) / 2)
 
 /*
  * linear_search_format - string "Value checked array[%d] = [%d]\n"
