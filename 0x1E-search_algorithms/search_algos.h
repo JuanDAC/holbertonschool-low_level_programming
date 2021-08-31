@@ -46,8 +46,9 @@ int advanced_binary(int *array, size_t size, int value);
 int exponential_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 int jump_search(int *array, size_t size, int value);
+
 int my_linear_search(int *array, size_t size, int value, int index);
-int binary_search(int *array, size_t size, int value);
+int my_binary_search(int *array, size_t size, int value, int index);
 
 /*
  * linear_search - searches for a value in an array of integers using the
@@ -59,7 +60,46 @@ int binary_search(int *array, size_t size, int value);
  *
  * Return: the first index where value is located
  */
+
 #define linear_search(A, S, V) my_linear_search((A), (S), (V), 0)
+
+/*
+ * binary_search - searches for a value in an array of integers using the
+ *                 Linear search algorithm
+ *
+ * @A: is a pointer to the first element of the array to search in
+ * @S: is the number of elements in array
+ * @V: is the value to search
+ *
+ * Return: the first index where value is located
+ */
+
+#define binary_search(A, S, V) my_binary_search((A), (S), (V), (int)(S) / 2)
+
+/*
+ * linear_search_format - string "Value checked array[%d] = [%d]\n"
+ */
+
 #define linear_search_format "Value checked array[%d] = [%d]\n"
+
+/*
+ * print_array - print items of array integers
+ *
+ * @ARRAY: is a pointer to the first element of the array to search in
+ * @SIZE: is the number of elements in array
+ *
+ * Return: the first index where value is located
+ */
+
+#define print_array(ARRAY, SIZE)                           \
+	do {                                                   \
+		int _index = 0;                                    \
+		if ((ARRAY) == NULL || (SIZE) == 0)                \
+			break;                                         \
+		printf("Searching in array: %d", (ARRAY)[_index]); \
+		for (_index = 1; _index < (int)(SIZE); _index++)   \
+			printf(", %d", (ARRAY)[_index]);               \
+		printf("\n");                                      \
+	} while (0)
 
 #endif /* SEARCH_ALGOS */
