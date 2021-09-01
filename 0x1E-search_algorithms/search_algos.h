@@ -47,8 +47,8 @@ int advanced_binary(int *array, size_t size, int value);
 int exponential_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 int my_linear_search(int *array, size_t size, int value, int index);
-int my_jump_search(int *array, size_t size, int value, int index);
 int binary_search(int *array, size_t size, int value);
+int my_jump_search(int *array, size_t size, int value, int i, int to_lineal);
 
 /*
  * linear_search - searches for a value in an array of integers using the
@@ -73,7 +73,7 @@ int binary_search(int *array, size_t size, int value);
  *
  * Return: the first index where value is located
  */
-#define jump_search(A, S, V) my_jump_search((A), (S), (V), 0)
+#define jump_search(A, S, V) my_jump_search((A), (S), (V), 0, 0)
 
 
 /*

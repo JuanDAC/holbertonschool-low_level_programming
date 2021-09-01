@@ -21,7 +21,7 @@ int my_jump_search(int *array, size_t size, int value, int i, int to_lineal)
 
 	if (array[i] < value && !to_lineal)
 	{
-		printf("Value checked array[%i] = [%i]\n", i, array[i]);
+		printf(linear_search_format, i, array[i]);
 		if ((i + jump) >= (int)size || array[i + jump] >= value)
 		{
 			printf("Value found between indexes [%i] and [%i]\n", i, i + jump);
@@ -31,7 +31,7 @@ int my_jump_search(int *array, size_t size, int value, int i, int to_lineal)
 	}
 	else if (i <= to_lineal && i < (int)size)
 	{
-		printf("Value checked array[%i] = [%i]\n", i, array[i]);
+		printf(linear_search_format, i, array[i]);
 		if (array[i] == value)
 			return (i);
 		return (my_jump_search(array, size, value, i + 1, to_lineal));
