@@ -45,10 +45,38 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 listint_t *jump_list(listint_t *list, size_t size, int value);
 int advanced_binary(int *array, size_t size, int value);
 int exponential_search(int *array, size_t size, int value);
-int interpolation_search(int *array, size_t size, int value);
 int my_linear_search(int *array, size_t size, int value, int index);
 int binary_search(int *array, size_t size, int value);
 int my_jump_search(int *array, size_t size, int value, int i, int to_lineal);
+int my_interpolation_search(int *array, size_t size,
+	int value, size_t right, size_t left
+);
+
+/*
+ * interpolation - ecuation of interpolation
+ *
+ * @A: is a pointer to the first element of the array to search in
+ * @V: is the value to search
+ * @L: is first index
+ * @R: is last index
+ *
+ * Return: the first index where value is located
+ */
+#define interpolation(A, V, L, R) ((L) + (((double)((R) - (L)) / ((A)[(R)] \
+				- (A)[(L)])) * ((V) - (A)[(L)])))
+
+/*
+ * interpolation_search - searches for a value in an array of integers using
+ *                        the interpolation search algorithm
+ *
+ * @A: is a pointer to the first element of the array to search in
+ * @S: is the number of elements in array
+ * @V: is the value to search
+ *
+ * Return: the first index where value is located
+ */
+#define interpolation_search(A, S, V) (my_interpolation_search((A), (S), (V),\
+			(S) - 1, 0))
 
 /*
  * linear_search - searches for a value in an array of integers using the
