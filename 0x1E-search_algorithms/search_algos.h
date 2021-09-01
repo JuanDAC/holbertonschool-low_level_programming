@@ -73,8 +73,8 @@ int binary_search(int *array, size_t size, int value);
  *
  * Return: the first index where value is located
  */
-
 #define jump_search(A, S, V) my_jump_search((A), (S), (V), 0)
+
 
 /*
  * linear_search_format - string "Value checked array[%d] = [%d]\n"
@@ -88,7 +88,6 @@ int binary_search(int *array, size_t size, int value);
  * @ARRAY: is a pointer to the first element of the array to search in
  * @SIZE: is the number of elements in array
  *
- * Return: the first index where value is located
  */
 
 #define print_array(ARRAY, SIZE)                           \
