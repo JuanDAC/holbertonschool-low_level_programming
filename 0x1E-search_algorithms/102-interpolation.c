@@ -18,7 +18,13 @@ int my_interpolation_search(int *array, size_t size,
 {
 	size_t index = 0;
 
-	if (array == NULL && size == 0 && array[left] == array[right])
+	if (array == NULL && size == 0)
+		return (-1);
+
+	if (array[left] == array[right] && array[right] == value)
+		return (right);
+
+	if (array[left] == array[right])
 		return (-1);
 
 	index = interpolation(array, value, left, right);
@@ -29,9 +35,12 @@ int my_interpolation_search(int *array, size_t size,
 		return (-1);
 	}
 	printf("Value checked array[%lu] = [%d]\n", index, array[index]);
+
 	if (array[index] < value)
 		return (my_interpolation_search(array, size, value, right, index + 1));
+
 	if (array[index] > value)
 		return (my_interpolation_search(array, size, value, index - 1, left));
+
 	return (index);
 }
