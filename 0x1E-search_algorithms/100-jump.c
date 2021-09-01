@@ -14,14 +14,15 @@
 
 int my_linear_search(int *array, size_t size, int value, int index)
 {
-	if (array == NULL || (int)size <= 0)
-		return (-1);
+	if (array == NULL || (int)size == index)
+		return (index * -1);
 
 	printf(linear_search_format, index, array[index]);
+
 	if (array[index] == value)
 		return (index);
 
-	return (my_linear_search(array, size - 1, value, index + 1));
+	return (my_linear_search(array, size, value, index + 1));
 }
 
 /**
@@ -39,18 +40,22 @@ int my_jump_search(int *array, size_t size, int value, int index)
 {
 	int jump = 0, next = 0;
 
-	if (array == NULL || size <= 0)
+	if (array == NULL || size <= 0 || array[index] > value)
 		return (-1);
 
 	jump = sqrt(size);
-	next = index + jump < (int)size ? index + jump : (int)size - 1;
+	next = (index + jump) <= (int)size ? index + jump : (int)size - 1;
 
 	printf(linear_search_format, index, array[index]);
 
 	if (array[next] >= value || index == (int)size - 1)
 	{
 		printf("Value found between indexes [%d] and [%d]\n", index, index + jump);
-		return (my_linear_search(array, (next - index) + 1, value, index));
+		if (array[index] <= value)
+			next = my_linear_search(array, next, value, index);
+		if (next == index * -1)
+			printf(linear_search_format, index, array[index]);
+		return (next < 0 ? -1 : next);
 	}
 
 	return (my_jump_search(array, size, value, next));
