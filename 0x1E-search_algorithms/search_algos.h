@@ -44,13 +44,25 @@ typedef struct listint_s
 skiplist_t *linear_skip(skiplist_t *list, int value);
 listint_t *jump_list(listint_t *list, size_t size, int value);
 int advanced_binary(int *array, size_t size, int value);
-int exponential_search(int *array, size_t size, int value);
 int my_linear_search(int *array, size_t size, int value, int index);
 int binary_search(int *array, size_t size, int value);
 int my_jump_search(int *array, size_t size, int value, int i, int to_lineal);
 int my_interpolation_search(int *array, size_t size,
 	int value, size_t right, size_t left
 );
+int my_exponential_search(int *array, size_t size, int value, int index);
+
+
+
+/*
+ * min - finds the minimum of two values
+ * @A: first value to compare
+ * @B: second value to compare
+ * @T: type of variables
+ *
+ * Return: The smaller of the two values, or a if equal
+ */
+#define min(A, B, T) (((T)B < (T)A) ? (T)(B) : (T)(A))
 
 /*
  * interpolation - ecuation of interpolation
@@ -78,6 +90,18 @@ int my_interpolation_search(int *array, size_t size,
 #define interpolation_search(A, S, V) (my_interpolation_search((A), (S), (V),\
 			(S) - 1, 0))
 
+/*
+ * exponential_search - searches for a value in a sorted array
+ *                      of integers using the Exponential search algorithms
+ *
+ * @A: pointer to the first element of the array to search in
+ * @S: number of elements in array
+ * @V: value to search for
+ *
+ * Return: first index where value is located, or -1 on failure
+ */
+
+#define exponential_search(A, S, V) (my_exponential_search((A), (S), (S), 1))
 /*
  * linear_search - searches for a value in an array of integers using the
  *                 Linear search algorithm
