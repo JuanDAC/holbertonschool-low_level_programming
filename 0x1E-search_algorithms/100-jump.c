@@ -16,7 +16,7 @@ int my_jump_search(int *array, size_t size, int value, int i, int to_lineal)
 {
 	int jump = sqrt(size);
 
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 
 	if (array[i] < value && !to_lineal)
