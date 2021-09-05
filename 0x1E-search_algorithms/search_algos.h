@@ -153,4 +153,22 @@ int my_exponential_search(int *array, size_t size, int value, int index);
 		printf("\n");                                      \
 	} while (0)
 
+/*
+ * nodes_until - Advance n number of nodes on a singly-linked list.
+ * @L: The current node.
+ * @S: The steps needed to advance to the next node.
+ * @N: The pointer to the next node. If step goes beyond the length
+ *         of the list, returns the last node.
+ */
+#define nodes_until(L, S, N)                 \
+	do {                                     \
+		size_t _step;                        \
+		for (_step = 0; _step < (S); _step++)\
+		{                                    \
+			if (!list->next)                 \
+				break;                       \
+			list = list->next;               \
+		}                                    \
+		N = (list);                          \
+	} while (0)
 #endif /* SEARCH_ALGOS */
